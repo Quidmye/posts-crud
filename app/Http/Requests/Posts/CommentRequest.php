@@ -25,7 +25,7 @@ class CommentRequest extends FormRequest
     {
         return [
             'text' => 'required|string|min:5|max:255',
-            'user_name' => 'required|string|min:5|max:5',
+            'user_name' => 'required|string|min:5|max:50',
             'post_id' => 'exists:posts,id',
             'referenced_comment_id' => 'exists:comments,id|nullable'
         ];

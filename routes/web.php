@@ -18,7 +18,8 @@ Route::get('/', function () {
 });
 Route::group([
         'prefix' => 'api',
-        'namespace' => 'App\Http\Controllers'
+        'namespace' => 'App\Http\Controllers',
+        'middleware' => 'auth:sanctum'
     ], function () {
         Route::group([
             'prefix' => 'posts',
