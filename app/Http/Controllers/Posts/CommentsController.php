@@ -37,7 +37,7 @@ class CommentsController extends Controller
 
         if ($request->has('referenced_comment_id')) {
             $parentComment = Comment::findOrFail($request->input('referenced_comment_id'));
-            if ($parentComment->post_id !== (int)$postId) {
+            if ((int)$parentComment->post_id !== (int)$postId) {
                 abort(400);
             }
             $data['comment_id'] = $parentComment->id;
